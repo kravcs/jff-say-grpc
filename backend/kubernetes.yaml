@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: say-deployment
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: say
+    spec:
+      containers:
+      - name: say
+        image: gcr.io/go-say/say
+        ports:
+        - containerPort: 80
